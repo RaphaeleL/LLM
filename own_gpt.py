@@ -14,11 +14,19 @@ n_embd = 384
 n_head = 6
 n_layer = 6
 dropout = 0.2
+# Tokens: something around 300k 
 # ------------
+
+# Chat GPT 3 had following hyperparameters:
+# Tokens: 300 Bilions, but now they should be around 1 Trilion and above
+#  n_layer = 96
+# n_embd = 12288
+# n_heads = 96
+# head_size = 128 
+# batch_size = 3.2 M 
 
 torch.manual_seed(1337)
 
-# wget https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt
 with open('input.txt', 'r', encoding='utf-8') as f:
     text = f.read()
 
